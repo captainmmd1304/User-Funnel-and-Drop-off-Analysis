@@ -32,10 +32,6 @@ def calculate_funnel_metrics(df):
     # Drop-off Rate: 1 - Conversion Rate
     metrics['Drop_off_Rate'] = 1 - metrics['Conversion_Rate']
 
-    # Calculate 95% Confidence Interval for Conversion Rate
-    # Standard Error = sqrt(p * (1 - p) / n)
-    # n is Prev_Users. We handle division by zero or NaN.
-    # For CI, we use 1.96 for 95% confidence.
     
     # We need to fill NA for calculation, using fillna(0) for safe math, though logic handles it.
     p = metrics['Conversion_Rate']
